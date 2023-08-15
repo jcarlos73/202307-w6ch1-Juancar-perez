@@ -5,10 +5,14 @@ const useFilmsApi = () => {
   const apiUrl = `${import.meta.env.VITE_FILMS_API_URL}/films`;
 
   const getFilmsApi = useCallback(async () => {
-    const response = await fetch(apiUrl);
-    const apiFilms = (await response.json()) as Film[];
+    try {
+      const response = await fetch(apiUrl);
+      const apiFilms = (await response.json()) as Film[];
 
-    return apiFilms;
+      return apiFilms;
+    } catch (error) {
+      throw new Error("Can't get films");
+    }
   }, [apiUrl]);
 
   return {
