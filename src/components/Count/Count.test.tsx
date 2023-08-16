@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { vi } from "vitest";
 import { mockFilms } from "../../mocks/mockFilms";
-import FilmsContext from "../../store/films/context/filmsContext";
+import FilmsContext from "../../store/films/context/FilmsContext";
 import Count from "./Count";
 
 describe("Given a Count component", () => {
