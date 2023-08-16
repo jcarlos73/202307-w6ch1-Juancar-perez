@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import FilmsContext from "../../store/films/context/filmsContext";
+import FilmsContext from "../../store/films/context/FilmsContext";
 
 const Count = (): React.ReactElement => {
   const { films } = useContext(FilmsContext);
