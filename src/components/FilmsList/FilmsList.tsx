@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import FilmsContext from "../../store/films/context/filmsContext";
+import FilmsContext from "../../store/films/context/FilmsContext";
 import FilmCard from "../FilmCard/FilmCard";
 import "./FilmsList.css";
 
@@ -8,13 +8,11 @@ const FilmsList = (): React.ReactElement => {
 
   return (
     <ul className="films">
-      {films.map((film) => {
-        return (
-          <li key={film.id}>
-            <FilmCard film={film} />
-          </li>
-        );
-      })}
+      {films.map((film) => (
+        <li key={film.id}>
+          <FilmCard film={film} />
+        </li>
+      ))}
     </ul>
   );
 };
