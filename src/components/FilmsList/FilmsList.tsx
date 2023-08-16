@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import FilmsContext from "../../store/films/context/filmsContext";
+import FilmsContext from "../../store/films/context/Context";
 import FilmCard from "../FilmCard/FilmCard";
 import "./FilmsList.css";
 
