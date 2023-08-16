@@ -4,9 +4,9 @@ import { mockFilms } from "../mocks/mockFilms";
 import { server } from "../mocks/server";
 import useFilmsApi from "./useFilmsApi";
 
-describe("Given a useFilmsApi custom hook", () => {
-  describe("When calling a useFilmsApi", () => {
-    test("Then you will receive a list of films", async () => {
+describe("Given a 'getFilms' function", () => {
+  describe("When it is called", () => {
+    test("Then it should a list of films", async () => {
       const { result } = renderHook(() => useFilmsApi());
       const { getFilmsApi } = result.current;
 
@@ -15,7 +15,7 @@ describe("Given a useFilmsApi custom hook", () => {
       expect(films).toStrictEqual(mockFilms);
     });
 
-    test("Then you will get an error 'Can't get films'", async () => {
+    test("And you will get an error 'Can't get films'", async () => {
       server.resetHandlers(...errorHandlers);
 
       const expectedError = new Error("Can't get films");
