@@ -6,20 +6,22 @@ interface FilmCardProps {
   film: Film;
 }
 
-const FilmCard = ({ film }: FilmCardProps): React.ReactElement => {
+const FilmCard = ({
+  film: { title, poster, director, year },
+}: FilmCardProps): React.ReactElement => {
   return (
     <article className="film">
       <h3>
-        {film.title} ({film.year})
+        {title} ({year})
       </h3>
       <img
         className="film__poster"
-        src={film.poster}
-        alt={`Cartel de ${film.title}`}
+        src={poster}
+        alt={`Cartel de ${title}`}
         width="300"
         height="406"
       />
-      <span aria-label="director">Dirección: {film.director}</span>
+      <span aria-label="director">Dirección: {director}</span>
       <Button className="film__button">
         <X aria-label="eliminar película" />
       </Button>
